@@ -17,8 +17,8 @@ title: eijuoy's Blog
 author: eijuoy
 email: eijuoy@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  程序媛/小硕/外协/折腾/技术宅
-url: http://lszero.com # the base hostname & protocol for your site, e.g. http://example.com
+  /执着/思考/折腾/技术
+url: http://wifi.eijuoy.com # the base hostname & protocol for your site, e.g. http://example.com
 sitesearchurl: 9403.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -37,11 +37,10 @@ excerpt_separator: <!-- more -->
 permalink: /:categories/:title.html
 
 social_media:
-  github_url: https://github.com/lszero
-  weibo_url: http://weibo.com/u/2313016370
-  zhihu_url: https://www.zhihu.com/people/lszero
-  twitter_url: https://twitter.com/_lszero
-  lofter_url: http://intzero.lofter.com/
+  github_url: https://github.com/ejuoy
+  weibo_url: http://weibo.com/u/eijuoy
+  zhihu_url: https://www.zhihu.com/people/eijuoy
+  twitter_url: https://twitter.com/eijuoy
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
