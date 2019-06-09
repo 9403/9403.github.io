@@ -14,17 +14,7 @@ Zero a minimal two-column Jekyll theme based on bootstrap 3.
 
 ##  Preview
 
-See [Demo](https://9403.github.io/).
-
-* Index
-
-  ![index](https://github.com/lszero/zero-theme/blob/master/img/demo-index.png)
-
-
-* Post - Table of Contents
-
-  ![Table of Contents](https://github.com/lszero/zero-theme/blob/master/img/demo-post.png)
-
+See [Demo](https://9403.github.io/)
 ## Usage
 
 ...
