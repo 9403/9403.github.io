@@ -47,7 +47,7 @@ tags: [github, Markdown,basic ]
 
 # 图片
 
-![大白大白](/Users/yj/Documents/136f5ee92b6d7d2fffe719ec39c22fd49232.png)
+![大白大白](../img/136f5ee92b6d7d2fffe719ec39c22fd49232.png)
 
 
 
