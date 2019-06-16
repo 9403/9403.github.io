@@ -69,19 +69,16 @@ def hello_itcast(id):
 * Jinja2 模版引擎
 
 * 模版基本语法
-
-  
-
-  ```
+```html
   {% if user %}
-  	{{ user }}
+      {{ user }}
   {% else %}
-  	hello %
+      hello!
   <ul>
-  	{% for index in indexs %}
-  		<li> {{ index }} </lili>
-  	{% endfor %}
+      {% for index in indexs %}
+      <li> {{ index }} </li>
+      {% endfor %}
   </ul>
-  ```
+```
 
   
