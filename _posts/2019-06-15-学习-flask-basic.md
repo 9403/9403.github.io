@@ -71,15 +71,15 @@ def hello_itcast(id):
 * 模版基本语法
 
   ```html
-    {% if user %}
-        {{ user }}
-    {% else %}
-        hello!
-    <ul>
-        {% for index in indexs %}
-        <li> {{ index }} </li>
-        {% endfor %}
-    </ul>
+  {% if user %}
+  	{{ user }}
+  {% else %}
+  	hello!
+  <ul>
+  	{% for index in indexs %}
+  		<li> {{ index }} </li>
+  	{% endfor %}
+  </ul>
   ```
 
   
