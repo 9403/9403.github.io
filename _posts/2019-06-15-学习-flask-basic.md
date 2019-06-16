@@ -72,7 +72,7 @@ def hello_itcast(id):
 
   
 
-  ```html
+  ```
   {% if user %}
   	{{ user }}
   {% else %}
