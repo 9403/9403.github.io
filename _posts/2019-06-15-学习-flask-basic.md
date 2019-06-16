@@ -67,19 +67,106 @@ def hello_itcast(id):
 ##  模版
 
 * Jinja2 模版引擎
+- 变量
 
-* 模版基本语法
+  ```HTML
+  <p>{{mydict['key']}}</p>
+  
+  <p>{{mylist[1]}}</p>
+  
+  <p>{{mylist[myvariable]}}</p>
+  ```
+
+    
+
+  ```python
+  from flask import Flask,render_template
+  app = Flask(__name__)
+  
+  @app.route('/')
+  def index():
+      mydict = {'key':'silence is gold'}
+      mylist = ['Speech', 'is','silver']
+      myintvar = 0
+  
+      return render_template('vars.html',
+                             mydict=mydict,
+                             mylist=mylist,
+                             myintvar=myintvar
+                             )
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+- 反向路由
+
+  ```python
+  @app.route('/index')
+  def index():
+      return render_template('index.html')
+  
+  @app.route('/user/')
+  def redirect():
+      return url_for('index',_external=True)
+  ```
+
+
+
+## web 表单
+
+
+
+
 
 ```html
-{% if user %}
-	{{ user }}
-{% else %}
-	hello!
-<ul>
-	{% for index in indexs %}
-		<li> {{ index }} </li>
-	{% endfor %}
-</ul>
+#模板文件
+<form method='post'>
+    <input type="text" name="username" placeholder='Username'>
+    <input type="password" name="password" placeholder='password'>
+    <input type="submit">
+</form>
 ```
+
+```python
+from flask import Flask,render_template,request
+
+@app.route('/login',methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        print(username,password)
+    return render_template('login.html',method=request.method)
+```
+
+
+
+## 控制语句
+
+```python
+@app.route('/user')
+def user():
+    user = 'dongGe'
+    return render_template('user.html',user=user)
+```
+
+```python
+@app.route('/loop')
+def loop():
+    fruit = ['apple','orange','pear','grape']
+    return render_template('loop.html',fruit=fruit)
+```
+
+
+## 数据库操作
+
+## 邮件扩展
+
+## image图片上传
+
+## 部署
+
+
+
 
   
