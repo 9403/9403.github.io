@@ -1,223 +1,134 @@
 ---
 layout: post
-title:  "学习 flask"
-date:   2019-06-15 20:51:11
+title:  "学习 flask basic"
+date:   2019-06-16 20:51:11
 categories: basic
-tags: [flask, web ,ui]
+tags: [flask, web，basic ]
+
 ---
 
+# flask basic
 
+# # 标题
 
-#  flask 轻量级，灵活框架
+# 一级标题
 
-## hello flask
+## 二级标题
 
-1. 安装  ` pip install flask`
-2. 倒入 `from flask import Flask`
-3.  hello flask      
+### 三级标题
 
-    ```python
-# 导入Flask类
-from flask import Flask
+#### 四级标题
 
-#Flask类接收一个参数__name__
-app = Flask(__name__)
+##### 五级标题
 
-# 装饰器的作用是将路由映射到视图函数index
-@app.route('/')
-def index():
-    return 'Hello Flask'
+# 字体
 
-# Flask应用程序实例的run方法启动WEB服务器
-if __name__ == '__main__':
-    app.run()
-    ```
+**加粗**			两个** 号包起来
 
-4. Debug
+*斜体*         		一个 * 号包起来
 
-   config.py 	` DEBUG=True`
+***斜体加粗***		三个*包起来
 
-   `app.config.from_object(config)`
+~~删除线~~			两个~~包起来
 
-   `app.debug = True`
+# 引用
 
-5. port 默认5000
+> 引用 
 
-6. ```
-   app.run(host='0.0.0.0',port=8030,debug=True)
-   ```
+文字前面加>
 
-   
+# 分割线
 
-## flask route 
+三个或者三个以上的 -或者*都行
 
+------
 
+------
 
-* 路由器传参数
+------
 
-      ```python
-# 路由传递的参数默认当做string处理，这里指定int，尖括号中冒号后面的内容是动态的
-@app.route('/user/<int:id>')
-def hello_itcast(id):
-    return 'hello itcast %d' %id
-      ```
+# 图片
 
-* 返回状态码
-
-  ```python
-  @app.route('/')
-  def hello_itcast():
-      return 'hello itcast',999
-  ```
-
-## 模版
-
-* Jinja2 模版引擎
-
-* 模版基本语法
-
-  ```html
-  {% if user %}
-      {{ user }}
-  {% else %}
-      hello!
-  <ul>
-      {% for index in indexs %}
-      <li> {{ index }} </li>
-      {% endfor %}
-  </ul>
-  ```
-
-* 变量
-
-  ```HTML
-  <p>{{mydict['key']}}</p>
-  
-  <p>{{mylist[1]}}</p>
-  
-  <p>{{mylist[myvariable]}}</p>
-  ```
-
-    
-
-  ```python
-  from flask import Flask,render_template
-  app = Flask(__name__)
-  
-  @app.route('/')
-  def index():
-      mydict = {'key':'silence is gold'}
-      mylist = ['Speech', 'is','silver']
-      myintvar = 0
-  
-      return render_template('vars.html',
-                             mydict=mydict,
-                             mylist=mylist,
-                             myintvar=myintvar
-                             )
-  if __name__ == '__main__':
-      app.run(debug=True)
-  ```
-
-* 反向路由
-
-  ```python
-  @app.route('/index')
-  def index():
-      return render_template('index.html')
-  
-  @app.route('/user/')
-  def redirect():
-      return url_for('index',_external=True)
-  ```
+![大白大白](/win_share/blog/9403.github.io/img/136f5ee92b6d7d2fffe719ec39c22fd49232.png)
 
 
 
-## web 表单
+# 超链接
+
+[百度](www.baidu.com)
+
+# 无序列表
+
+- 列表
+
+- 列表
+
+- 列表
+
+加减乘  -+*都行 注意有空格
+
+# 有序列表
+
+数字加点
+
+1. 有序列表
+2. 有序列表
 
 
 
+- 列表套嵌
+  1. 2
+     1. 123123
+     2. 45678
+        - 123123
 
+# 表格
 
-```html
-#模板文件
-<form method='post'>
-    <input type="text" name="username" placeholder='Username'>
-    <input type="password" name="password" placeholder='password'>
-    <input type="submit">
-</form>
 ```
+表头|表头|表头
+---|:--:|---:
+内容|内容|内容
+内容|内容|内容
+
+第二行分割表头和内容。
+- 有一个就行，为了对齐，多加了几个
+文字默认居左
+-两边加：表示文字居中
+-右边加：表示文字居右
+注：原生的语法两边都要用 | 包起来。此处省略
+```
+
+
+
+| 1    | 2    | 3    | 4    | 5    |
+| ---- | ---- | ---- | ---- | ---- |
+| 1    | 2    | 1    |      |      |
+| 1    | 2    |      |      |      |
+| 1    | 2    |      |      |      |
+| 1    | 3    |      |      |      |
+
+
+
+| 1    | 2    |
+| ---- | ---- |
+|      |      |
+
+
+
+# 代码
+
+单行
+
+` python -c 'import tensorflow as tf; print(tf.__verison__)'` 
+
+多行
 
 ```python
-from flask import Flask,render_template,request
-
-@app.route('/login',methods=['GET','POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        print(username,password)
-    return render_template('login.html',method=request.method)
+import tensorflow as tf
+print(tf.__verison__)
 ```
 
 
 
-## 控制语句
 
-```python
-@app.route('/user')
-def user():
-    user = 'dongGe'
-    return render_template('user.html',user=user)
-```
-
-```html
-<html>
- <head>
-     {% if user %}
-        <title> hello {{user}} </title>
-    {% else %}
-         <title> welcome to flask </title>        
-    {% endif %}
- </head>
- <body>
-     <h1>hello world</h1>
- </body>
- </html>
-```
-
-```python
-@app.route('/loop')
- def loop():
-    fruit = ['apple','orange','pear','grape']
-    return render_template('loop.html',fruit=fruit)
-```
-
-```html
-<html>
- <head>
-     {% if user %}
-        <title> hello {{user}} </title>
-    {% else %}
-         <title> welcome to flask </title>        
-    {% endif %}
- </head>
- <body>
-     <h1>hello world</h1>
-    <ul>
-        {% for index in fruit %}
-            <li>{{ index }}</li>
-        {% endfor %}
-    </ul>
- </body>
- </html>
-```
-
-## 数据库操作
-
-## 邮件扩展
-
-## image图片上传
-
-## 部署
 
