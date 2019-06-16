@@ -63,33 +63,3 @@ def hello_itcast(id):
   def hello_itcast():
       return 'hello itcast',999
   ```
-  
-## 模版
-
-- Jinja2 模版引擎
-
-- 模版基本语法
-
-  ```
-  {% if user %}
-      {{ user }}
-  {% else %}
-      hello!
-  <ul>
-      {% for index in indexs %}
-      <li> {{ index }} </li>
-      {% endfor %}
-  </ul>
-  ```
-
-- 变量
-
-  ```
-  <p>{{mydict['key']}}</p>
-  
-  <p>{{mylist[1]}}</p>
-  
-  <p>{{mylist[myvariable]}}</p>
-  ```
-
-
