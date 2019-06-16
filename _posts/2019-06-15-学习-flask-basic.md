@@ -70,18 +70,18 @@ def hello_itcast(id):
 
 * 模版基本语法
 
+  
+
   ```html
   {% if user %}
   	{{ user }}
   {% else %}
-  	hello!
+  	hello %
   <ul>
   	{% for index in indexs %}
-  		<li> {{ index }} </li>
+  		<li> {{ index }} </lili>
   	{% endfor %}
   </ul>
   ```
-
-  
 
   
