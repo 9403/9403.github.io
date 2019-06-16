@@ -63,3 +63,65 @@ def hello_itcast(id):
   def hello_itcast():
       return 'hello itcast',999
   ```
+  
+## 模版
+
+- Jinja2 模版引擎
+
+- 模版基本语法
+
+  ```html
+  {% if user %}
+      {{ user }}
+  {% else %}
+      hello!
+  <ul>
+      {% for index in indexs %}
+      <li> {{ index }} </li>
+      {% endfor %}
+  </ul>
+  ```
+
+- 变量
+
+  ```HTML
+  <p>{{mydict['key']}}</p>
+  
+  <p>{{mylist[1]}}</p>
+  
+  <p>{{mylist[myvariable]}}</p>
+  ```
+
+    
+
+  ```python
+  from flask import Flask,render_template
+  app = Flask(__name__)
+  
+  @app.route('/')
+  def index():
+      mydict = {'key':'silence is gold'}
+      mylist = ['Speech', 'is','silver']
+      myintvar = 0
+  
+      return render_template('vars.html',
+                             mydict=mydict,
+                             mylist=mylist,
+                             myintvar=myintvar
+                             )
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+- 反向路由
+
+  ```python
+  @app.route('/index')
+  def index():
+      return render_template('index.html')
+  
+  @app.route('/user/')
+  def redirect():
+      return url_for('index',_external=True)
+  ```
+
