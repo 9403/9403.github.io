@@ -111,17 +111,5 @@ def hello_itcast(id):
                              )
   if __name__ == '__main__':
       app.run(debug=True)
-  ```
-
-- 反向路由
-
-  ```python
-  @app.route('/index')
-  def index():
-      return render_template('index.html')
-  
-  @app.route('/user/')
-  def redirect():
-      return url_for('index',_external=True)
-  ```
+```
 
