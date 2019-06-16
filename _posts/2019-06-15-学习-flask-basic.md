@@ -58,7 +58,7 @@ def hello_itcast(id):
 
 - 返回状态码
 
-  ```python
+  ```
   @app.route('/')
   def hello_itcast():
       return 'hello itcast',999
@@ -70,7 +70,7 @@ def hello_itcast(id):
 
 - 模版基本语法
 
-  ```html
+  ```
   {% if user %}
       {{ user }}
   {% else %}
@@ -84,7 +84,7 @@ def hello_itcast(id):
 
 - 变量
 
-  ```HTML
+  ```
   <p>{{mydict['key']}}</p>
   
   <p>{{mylist[1]}}</p>
