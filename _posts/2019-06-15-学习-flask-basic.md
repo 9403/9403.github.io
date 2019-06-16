@@ -92,24 +92,4 @@ def hello_itcast(id):
   <p>{{mylist[myvariable]}}</p>
   ```
 
-    
-
-  ```python
-  from flask import Flask,render_template
-  app = Flask(__name__)
-  
-  @app.route('/')
-  def index():
-      mydict = {'key':'silence is gold'}
-      mylist = ['Speech', 'is','silver']
-      myintvar = 0
-  
-      return render_template('vars.html',
-                             mydict=mydict,
-                             mylist=mylist,
-                             myintvar=myintvar
-                             )
-  if __name__ == '__main__':
-      app.run(debug=True)
-```
 
