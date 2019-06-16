@@ -6,7 +6,9 @@ categories: basic
 tags: [flask, web ,ui]
 ---
 
-# flask 轻量级，灵活框架
+
+
+#  flask 轻量级，灵活框架
 
 ## hello flask
 
